@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript</title>
+  </head>
+  <body>
+    <style>
+      body{
+       background-color:rgb(255, 255, 255);
+       text-align: center;
+       margin-top: 20px;
+       padding: 10px;
+       
+      }
+      .one{
+        direction:right;
+        color:rgb(0, 255, 170);
+        width: 60%;
+        height: 100%;
+        background-color: rgb(208, 231, 219);
+        text-shadow: 20px;
+      }
+      
+    </style>
+    
+    <script src="index.js"></script> 
+
+    <h2>Javascript Course</h2>
+ 
+    
+    <input type="text" id="name" placeholder="Enter Your Name" >
+    <button type="submit" onclick="myfun()">Submit</button>
+    <br>
+    <br>
+
+    <input type="text" id="nameone" placeholder="Enter your Address"hidden>
+    <br>
+    <br>
+    
+    <button type="submit" id="sub" hidden>submit</button>
+    <!-- <marquee class="one"> Episode Technologies</marquee> -->
+
+
+
+       
+     <!-- <label>Name:</label>
+     <input type="text" id="one"placeholder="Enter your name" required> <br><br>
+     
+     <input type="text"  id="two"placeholder="Enter your register number" hidden>
+     <br><br>
+
+     <button type="submit" onclick="myfun()" >Submit</button><br>
+
+     <script>
+        function myfun(){
+        var x=document.getElementById('one').value;
+        console.log(x);
+
+        }
+     </script> -->
+
+
+
+    <script>
+      function myfun(){
+         var name = document.getElementById('name').value;
+         console.log(name);
+
+        if(name < 18 ){
+          alert('success');
+           var b = document.getElementById('nameone');
+          b.style.display="inline";
+
+          var c = document.getElementById('sub');
+          c.style.display="inline";
+        }
+        else
+        {
+          alert('failed');
+        }
+
+      }
+
+
+    </script> 
+     
+  </body>
+</html>

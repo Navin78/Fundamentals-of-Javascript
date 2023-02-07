@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentals part 2</title>
+</head>
+<body>
+    <h2>Login Form</h2>
+
+    <label> FirstName</label>
+    <input type="text"  id="two" placeholder="enter the name">
+
+    <button onclick= myfun() >Submit</button><br><br>
+
+    <label> Lastname </label>
+
+    <input type="text" id ="next"  placeholder="enter the name"  ><br><br>
+
+      <button type="submit" id="final" hidden>Submit</button>
+    
+    <script src="script.js"></script>
+
+    <script>
+     function myfun(){
+         var name=document.getElementById('two').value;
+         alert('Login succesfully');
+        }
+
+    //      if (name > 18 ){
+    //             alert('success');
+    //          var b= document.getElementById('next');
+    //          b.style.display="inline";
+                                                         
+             
+    //          var c=document.getElementById('final');
+    //          c.style.display="inline";
+    //      }
+
+    //      else
+    //      {
+    //          alert('you are unable to login ');
+    //       }
+    //  
+
+    </script>
+
+</body>
+</html>
