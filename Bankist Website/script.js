@@ -280,7 +280,7 @@ console.log(imgtargets);
 const img=function(entries,observer)
 {
   const[entry]=entries
-  console.log(entry);
+  // console.log(entry);
 
   if(!entry.isIntersecting) return;
 
@@ -294,12 +294,23 @@ const img=function(entries,observer)
   {
     root:null,
     threshold:0,
-    rootMargin:'-150px',
+    rootMargin:'-100px',
   });
 
   imgtargets.forEach(img=>observer.observe(img));
  
+//Life cycle of the DOM Events
+document.addEventListener('DOMContentLoaded',function(e)
+{
+  console.log('DOM content loaded successfully',e);
+});
 
+window.addEventListener('beforeunload',function(e)
+{
+e.preventDefault();
+console.log(e);
+e.returnValue='';
+})
 
 
 
