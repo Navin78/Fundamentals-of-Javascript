@@ -5,6 +5,7 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn--close-modal");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
+const nav = document.querySelector('.nav');
 
 const openModal = function () {
   modal.classList.remove("hidden");
@@ -42,31 +43,31 @@ console.log(allbuttons);
 
 // inserting and deleting elements in dom events
 
-const message = document.createElement("div");
-message.classList.add("cookie-message");
-message.innerHTML =
-  'We used cookies for improved our functionality and analytics.<button class="btn btn--close-cookie">Got it!</button>';
-header.append(message);
-message.style.color = "";
-console.log(message);
+// const message = document.createElement("div");
+// message.classList.add("cookie-message");
+// message.innerHTML =
+//   'We used cookies for improved our functionality and analytics.<button class="btn btn--close-cookie">Got it!</button>';
+// header.append(message);
+// message.style.color = "";
+// console.log(message);
 
 // deleting the dom elements use remove or remove child
 
-document
-  .querySelector('.btn--close-cookie')
-  .addEventListener('click', function () {
-    // message.remove();
-    message.parentElement.removeChild(message);
-  });
+// document
+//   .querySelector('.btn--close-cookie')
+//   .addEventListener('click', function () {
+//     // message.remove();
+//     message.parentElement.removeChild(message);
+//   });
 
 // styles  using the dom events
 
-message.style.backgroundColor = "#37383d";
-message.style.width = "120%";
+// message.style.backgroundColor = "#37383d";
+// message.style.width = "120%";
 
 // it will assigning the which button is set as color primary chnage into
-document.documentElement.style.setProperty("--color-primary", "lightblue");
-console.log(logo.src);
+// document.documentElement.style.setProperty("--color-primary", "lightblue");
+// console.log(logo.src);
 
 // classes attributes
 
@@ -207,4 +208,98 @@ tabsContainer.addEventListener('click', function (e) {
     .classList.add('operations__content--active');
 
 });
+
+
+
+// Sticky navigation
+
+const initialcords=section1.getBoundingClientRect();
+
+// console.log(initialcords);
   
+// window.addEventListener('scroll',function()
+// {
+//   // console.log(window.scrollY);
+
+//   if(window.scrollY > initialcords.top) 
+//   nav.classList.add('sticky');
+//   else nav.classList.remove('sticky');
+// })
+
+const header1=document.querySelector(".header");
+const navheight=nav.getBoundingClientRect().height;
+
+const stickynav=function(entries)
+{
+  const[entry]=entries;
+  // console.log(entry);
+
+
+if(!entry.isIntersecting)nav.classList.add('sticky');
+else nav.classList.remove('sticky');
+};
+
+const header1observer= new IntersectionObserver(stickynav,{
+  root:null,
+  threshold:0.1,
+  rootMargin:`${navheight}px`,
+
+
+});
+header1observer.observe(header1);
+
+
+
+//Revealing the scroll with slow animation using API observer
+
+const Allsections  =document.querySelectorAll('.section')
+const revealsection=function(entries,observer) {
+  const[entry]=entries;
+  // console.log(entry);
+  if(!entry.isIntersecting) return;
+  entry.target.classList.remove('section--hidden');
+  observer.unobserve(entry.target);
+};
+
+const sectionobserver= new IntersectionObserver(revealsection,
+  {
+   root:null,
+  threshold:0.15,
+  });
+Allsections.forEach(function(section){
+  sectionobserver.observe(section);
+  section.classList.add('section--hidden');
+});
+
+
+// Lazy loading images 
+
+const imgtargets=document.querySelectorAll('img[data-src]');
+console.log(imgtargets);
+
+const img=function(entries,observer)
+{
+  const[entry]=entries
+  console.log(entry);
+
+  if(!entry.isIntersecting) return;
+
+  // Replace the src with the data src 
+  entry.target.src=entry.target.dataset.src;
+  entry.target.classList.remove('lazy-img');
+
+}
+
+ const observer=new IntersectionObserver(img,
+  {
+    root:null,
+    threshold:0,
+    rootMargin:'-150px',
+  });
+
+  imgtargets.forEach(img=>observer.observe(img));
+ 
+
+
+
+
