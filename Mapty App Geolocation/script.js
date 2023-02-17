@@ -184,6 +184,7 @@ class App {
   #mapZoomLevel = 13;
   #mapEvent;
   #workouts = [];
+ constworkouts1=[];
 
   constructor() {
     // Get user's position
