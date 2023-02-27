@@ -232,7 +232,9 @@ const group = {
   age: 25,
   City: "kerala",
   job: "cinema field",
-  friends: ["ram", "akash", "pradheep", "navin"],
+  friends: ["ram", "akash", "navin"],
 };
 
 console.log(` ${group.Lastname} has ${group.friends.length} friends and selected friend is ${group.friends[2] }`);
+
+
