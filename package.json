@@ -1,0 +1,25 @@
+{
+  "name": "fundamentals-of-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Navin78/Fundamentals-of-Javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Navin78/Fundamentals-of-Javascript/issues"
+  },
+  "homepage": "https://github.com/Navin78/Fundamentals-of-Javascript#readme",
+  "dependencies": {
+    "leaflet": "^1.9.3"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  }
+}
