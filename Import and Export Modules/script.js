@@ -27,10 +27,6 @@ add('apples', 4);
 console.log(cart);
 
 
-import cloneDeep from '../node_modules/lodash-es/cloneDeep.js';
-
-
-
 
 
 const cart1 = [
